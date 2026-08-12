@@ -1,0 +1,6 @@
+npm run dev:server
+npm run dev:client
+
+if use 
+npm run build --workspace client
+npm run serve:client

@@ -1,0 +1,324 @@
+{
+  "customers": [
+    {
+      "id": "demo-customer-1",
+      "name": "Amit Traders",
+      "mobile": "9876543210",
+      "email": "amit@example.com",
+      "businessName": "Amit Traders Pvt Ltd",
+      "gstNumber": "27ABCDE1234F1Z5",
+      "customerType": "Wholesale",
+      "address": "Andheri East, Mumbai",
+      "status": "Active",
+      "followUpDate": "2026-08-15",
+      "notes": "Prefers same-day delivery and consolidated invoices."
+    },
+    {
+      "id": "demo-customer-2",
+      "name": "Sharma Distributors",
+      "mobile": "9811122233",
+      "email": "accounts@sharmadist.example",
+      "businessName": "Sharma Distribution Co.",
+      "gstNumber": "07AAJCS4455K1Z8",
+      "customerType": "Distributor",
+      "address": "Karol Bagh, Delhi",
+      "status": "Lead",
+      "followUpDate": "2026-08-12",
+      "notes": "Asked for bulk pricing on electronics accessories."
+    },
+    {
+      "id": "demo-customer-3",
+      "name": "Patel Retail Mart",
+      "mobile": "9723456781",
+      "email": "patelmart@example.com",
+      "businessName": "Patel Retail Mart",
+      "gstNumber": "24AABCP9988L1Z2",
+      "customerType": "Retail",
+      "address": "Satellite, Ahmedabad",
+      "status": "Active",
+      "followUpDate": "2026-08-18",
+      "notes": "Monthly stationery and computer accessory order."
+    },
+    {
+      "id": "demo-customer-4",
+      "name": "R.K. Enterprises",
+      "mobile": "9000090000",
+      "email": "rk.enterprises@example.com",
+      "businessName": "R.K. Enterprises",
+      "gstNumber": "29AARFR2026D1Z9",
+      "customerType": "Wholesale",
+      "address": "Peenya, Bengaluru",
+      "status": "Active",
+      "followUpDate": "2026-08-14",
+      "notes": "Needs warehouse pickup support twice a week."
+    }
+  ],
+  "products": [
+    {
+      "id": "demo-product-1",
+      "name": "Mechanical Keyboard",
+      "sku": "KB-001",
+      "category": "Electronics",
+      "unitPrice": 1200,
+      "currentStock": 32,
+      "minStockAlert": 8,
+      "location": "A-01"
+    },
+    {
+      "id": "demo-product-2",
+      "name": "Wireless Mouse",
+      "sku": "MS-002",
+      "category": "Electronics",
+      "unitPrice": 700,
+      "currentStock": 6,
+      "minStockAlert": 10,
+      "location": "A-02"
+    },
+    {
+      "id": "demo-product-3",
+      "name": "USB-C Hub 6-in-1",
+      "sku": "HUB-006",
+      "category": "Electronics",
+      "unitPrice": 1850,
+      "currentStock": 14,
+      "minStockAlert": 6,
+      "location": "B-03"
+    },
+    {
+      "id": "demo-product-4",
+      "name": "A4 Premium Paper Box",
+      "sku": "PPR-A4-BOX",
+      "category": "Stationery",
+      "unitPrice": 1450,
+      "currentStock": 4,
+      "minStockAlert": 12,
+      "location": "C-08"
+    },
+    {
+      "id": "demo-product-5",
+      "name": "Thermal Billing Rolls",
+      "sku": "ROLL-80MM",
+      "category": "Stationery",
+      "unitPrice": 320,
+      "currentStock": 55,
+      "minStockAlert": 20,
+      "location": "C-11"
+    },
+    {
+      "id": "demo-product-6",
+      "name": "Barcode Scanner",
+      "sku": "SCAN-1D",
+      "category": "Electronics",
+      "unitPrice": 2600,
+      "currentStock": 3,
+      "minStockAlert": 5,
+      "location": "B-01"
+    }
+  ],
+  "challans": [
+    {
+      "id": "demo-challan-1",
+      "challanNumber": "CHL-2026-1001",
+      "customerId": "demo-customer-1",
+      "customerName": "Amit Traders",
+      "items": [
+        {
+          "productId": "demo-product-1",
+          "name": "Mechanical Keyboard",
+          "sku": "KB-001",
+          "quantity": 8,
+          "unitPrice": 1200
+        },
+        {
+          "productId": "demo-product-2",
+          "name": "Wireless Mouse",
+          "sku": "MS-002",
+          "quantity": 12,
+          "unitPrice": 700
+        }
+      ],
+      "totalQuantity": 20,
+      "status": "Confirmed",
+      "createdBy": "Sales User",
+      "createdAt": "2026-08-09T10:30:00.000Z"
+    },
+    {
+      "id": "demo-challan-2",
+      "challanNumber": "CHL-2026-1002",
+      "customerId": "demo-customer-3",
+      "customerName": "Patel Retail Mart",
+      "items": [
+        {
+          "productId": "demo-product-5",
+          "name": "Thermal Billing Rolls",
+          "sku": "ROLL-80MM",
+          "quantity": 25,
+          "unitPrice": 320
+        }
+      ],
+      "totalQuantity": 25,
+      "status": "Draft",
+      "createdBy": "Sales User",
+      "createdAt": "2026-08-10T08:45:00.000Z"
+    },
+    {
+      "id": "demo-challan-3",
+      "challanNumber": "CHL-2026-1003",
+      "customerId": "demo-customer-4",
+      "customerName": "R.K. Enterprises",
+      "items": [
+        {
+          "productId": "demo-product-3",
+          "name": "USB-C Hub 6-in-1",
+          "sku": "HUB-006",
+          "quantity": 6,
+          "unitPrice": 1850
+        }
+      ],
+      "totalQuantity": 6,
+      "status": "Confirmed",
+      "createdBy": "Sales User",
+      "createdAt": "2026-08-10T12:15:00.000Z"
+    }
+  ],
+  "stockMovements": [
+    {
+      "id": "demo-movement-1",
+      "productId": "demo-product-1",
+      "productName": "Mechanical Keyboard",
+      "quantityChanged": 8,
+      "movementType": "OUT",
+      "reason": "Sales challan confirmed",
+      "createdBy": "Sales User",
+      "timestamp": "2026-08-09T10:35:00.000Z"
+    },
+    {
+      "id": "demo-movement-2",
+      "productId": "demo-product-2",
+      "productName": "Wireless Mouse",
+      "quantityChanged": 12,
+      "movementType": "OUT",
+      "reason": "Sales challan confirmed",
+      "createdBy": "Sales User",
+      "timestamp": "2026-08-09T10:35:00.000Z"
+    },
+    {
+      "id": "demo-movement-3",
+      "productId": "demo-product-4",
+      "productName": "A4 Premium Paper Box",
+      "quantityChanged": 40,
+      "movementType": "IN",
+      "reason": "Supplier purchase order received",
+      "createdBy": "Warehouse User",
+      "timestamp": "2026-08-08T09:20:00.000Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "demo-invoice-1",
+      "invoiceNumber": "INV-2026-501",
+      "challanId": "demo-challan-1",
+      "customerName": "Amit Traders",
+      "totalAmount": 18000,
+      "dueDate": "2026-08-20",
+      "status": "Paid",
+      "createdAt": "2026-08-09T11:00:00.000Z"
+    },
+    {
+      "id": "demo-invoice-2",
+      "invoiceNumber": "INV-2026-502",
+      "challanId": "demo-challan-3",
+      "customerName": "R.K. Enterprises",
+      "totalAmount": 11100,
+      "dueDate": "2026-08-22",
+      "status": "Pending",
+      "createdAt": "2026-08-10T12:45:00.000Z"
+    },
+    {
+      "id": "demo-invoice-3",
+      "invoiceNumber": "INV-2026-503",
+      "challanId": "demo-challan-2",
+      "customerName": "Patel Retail Mart",
+      "totalAmount": 8000,
+      "dueDate": "2026-08-17",
+      "status": "Pending",
+      "createdAt": "2026-08-10T09:10:00.000Z"
+    }
+  ],
+  "purchaseOrders": [
+    {
+      "id": "demo-po-1",
+      "supplier": "TechSource India",
+      "productId": "demo-product-2",
+      "productName": "Wireless Mouse",
+      "quantity": 60,
+      "unitPrice": 610,
+      "status": "Confirmed",
+      "createdAt": "2026-08-10T07:30:00.000Z"
+    },
+    {
+      "id": "demo-po-2",
+      "supplier": "Office Supply Hub",
+      "productId": "demo-product-4",
+      "productName": "A4 Premium Paper Box",
+      "quantity": 45,
+      "unitPrice": 1280,
+      "status": "Draft",
+      "createdAt": "2026-08-10T13:20:00.000Z"
+    }
+  ],
+  "followUps": [
+    {
+      "id": "demo-follow-1",
+      "customerId": "demo-customer-2",
+      "customerName": "Sharma Distributors",
+      "note": "Send revised wholesale quotation for keyboards and USB hubs.",
+      "nextActionDate": "2026-08-12",
+      "createdAt": "2026-08-10T06:00:00.000Z"
+    },
+    {
+      "id": "demo-follow-2",
+      "customerId": "demo-customer-4",
+      "customerName": "R.K. Enterprises",
+      "note": "Confirm pickup schedule and pending invoice payment.",
+      "nextActionDate": "2026-08-14",
+      "createdAt": "2026-08-10T06:30:00.000Z"
+    },
+    {
+      "id": "demo-follow-3",
+      "customerId": "demo-customer-1",
+      "customerName": "Amit Traders",
+      "note": "Check satisfaction after latest confirmed challan delivery.",
+      "nextActionDate": "2026-08-15",
+      "createdAt": "2026-08-10T07:10:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "demo-admin",
+      "name": "Admin User",
+      "email": "admin@minierp.local",
+      "role": "Admin",
+      "phone": "9999999999",
+      "avatarUrl": "/uploads/1786394081939-test-avatar.svg"
+    },
+    {
+      "id": "demo-sales",
+      "name": "Sales User",
+      "email": "sales@minierp.local",
+      "role": "Sales"
+    },
+    {
+      "id": "demo-warehouse",
+      "name": "Warehouse User",
+      "email": "warehouse@minierp.local",
+      "role": "Warehouse"
+    },
+    {
+      "id": "demo-accounts",
+      "name": "Accounts User",
+      "email": "accounts@minierp.local",
+      "role": "Accounts"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "Mini ERP + CRM Operations Portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "customerId", "value": "demo-customer-1" },
+    { "key": "productId", "value": "demo-product-1" },
+    { "key": "challanId", "value": "demo-challan-1" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
+    },
+    {
+      "name": "Login - Admin",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"Admin User\",\n  \"password\": \"123456\"\n}" },
+        "url": "{{baseUrl}}/auth/login"
+      }
+    },
+    {
+      "name": "Dashboard Summary",
+      "request": { "method": "GET", "url": "{{baseUrl}}/dashboard" }
+    },
+    {
+      "name": "Customers - Paginated Search",
+      "request": { "method": "GET", "url": "{{baseUrl}}/customers?page=1&limit=5&search=traders&status=All" }
+    },
+    {
+      "name": "Customer Detail",
+      "request": { "method": "GET", "url": "{{baseUrl}}/customers/{{customerId}}" }
+    },
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Demo Retailer\",\n  \"mobile\": \"9888888888\",\n  \"email\": \"demo.retailer@example.com\",\n  \"businessName\": \"Demo Retailer Store\",\n  \"gstNumber\": \"\",\n  \"customerType\": \"Retail\",\n  \"address\": \"Pune\",\n  \"status\": \"Lead\",\n  \"followUpDate\": \"2026-08-20\",\n  \"notes\": \"New demo customer\"\n}" },
+        "url": "{{baseUrl}}/customers"
+      }
+    },
+    {
+      "name": "Products - Paginated Search",
+      "request": { "method": "GET", "url": "{{baseUrl}}/products?page=1&limit=5&search=mouse&category=All" }
+    },
+    {
+      "name": "Product Detail",
+      "request": { "method": "GET", "url": "{{baseUrl}}/products/{{productId}}" }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"HDMI Cable\",\n  \"sku\": \"HDMI-2M\",\n  \"category\": \"Electronics\",\n  \"unitPrice\": 250,\n  \"currentStock\": 40,\n  \"minStockAlert\": 8,\n  \"location\": \"D-02\"\n}" },
+        "url": "{{baseUrl}}/products"
+      }
+    },
+    {
+      "name": "Stock Movement Log",
+      "request": { "method": "GET", "url": "{{baseUrl}}/stock-movements" }
+    },
+    {
+      "name": "Challans - Search",
+      "request": { "method": "GET", "url": "{{baseUrl}}/challans?search=CHL" }
+    },
+    {
+      "name": "Challan Detail",
+      "request": { "method": "GET", "url": "{{baseUrl}}/challans/{{challanId}}" }
+    },
+    {
+      "name": "Create Confirmed Challan",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"customerId\": \"demo-customer-1\",\n  \"items\": [\n    {\n      \"productId\": \"demo-product-1\",\n      \"name\": \"Mechanical Keyboard\",\n      \"sku\": \"KB-001\",\n      \"quantity\": 1,\n      \"unitPrice\": 1200\n    },\n    {\n      \"productId\": \"demo-product-5\",\n      \"name\": \"Thermal Billing Rolls\",\n      \"sku\": \"ROLL-80MM\",\n      \"quantity\": 2,\n      \"unitPrice\": 320\n    }\n  ],\n  \"status\": \"Confirmed\"\n}" },
+        "url": "{{baseUrl}}/challans"
+      }
+    },
+    {
+      "name": "Invoices",
+      "request": { "method": "GET", "url": "{{baseUrl}}/invoices" }
+    },
+    {
+      "name": "Purchase Orders",
+      "request": { "method": "GET", "url": "{{baseUrl}}/purchase-orders" }
+    },
+    {
+      "name": "Follow Ups",
+      "request": { "method": "GET", "url": "{{baseUrl}}/follow-ups" }
+    }
+  ]
+}

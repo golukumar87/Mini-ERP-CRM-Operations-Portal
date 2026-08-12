@@ -1,0 +1,33 @@
+# Run commands for Mini ERP + CRM Portal
+
+# 1. Go to project folder
+cd /d "c:\Users\Ravish Kumar\Desktop\React Full Coures\Placement Inforcment"
+
+# 2. Install dependencies
+npm install
+npm run install:all
+
+# 3. Start backend server
+npm run dev --workspace server
+
+# 4. Start frontend (open another terminal)
+npm run dev --workspace client
+
+# 5. Open in browser
+http://localhost:3000
+
+# 6. Backend API
+http://localhost:5000
+
+# 7. Run both together from root (optional)
+npm run dev
+
+# 8. Build for production
+npm run build --workspace client
+npm run build --workspace server
+
+# Demo login credentials
+Admin User / 123456
+Sales User / 123456
+Warehouse User / 123456
+Accounts User / 123456
